@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多區塊範例</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="cover-container">
+    <!--    <div class="button-menu">-->
+    <!--        <button>Home</button>-->
+    <!--        <button>About</button>-->
+    <!--        <button>Contact</button>-->
+    <!--        <button>Services</button>-->
+    <!--    </div>-->
+    <div class="search-container"><label for="city">城市</label>
+        <select id="city">
+            <option value="taipei">台北</option>
+            <option value="kaohsiung">高雄</option>
+            <option value="others">其他</option>
+        </select>
+        <label for="start-date">Start</label>
+        <input type="date" id="start-date">
+        <label for="end-date">End</label>
+        <input type="date" id="end-date">
+        <button class="pdt-button">表演時間</button>
+        <button class="sdt-button">售票時間</button>
+    </div>
+</div>
+<div class="content-section">
+    <div class="latest-info">
+        <h1>最新資訊</h1>
+    </div>
+    <div class="grid-container" id="grid-container">
+    </div>
+    <div class="pagination-container">
+        <button id="prev-page" disabled>上一頁</button>
+        <span id="page-info">第 1 頁</span>
+        <button id="next-page">下一頁</button>
+    </div>
+</div>
+<script src="more.js"></script>
+<!--    <div class="content-section">-->
+<!--        <h2>這是另一個區塊</h2>-->
+<!--        <p>更多的文字、圖片或其他元素可以放在這裡。</p>-->
+<!--    </div>-->
+</body>
+</html>
