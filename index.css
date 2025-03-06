@@ -14,8 +14,10 @@ body {
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden; /* 隱藏超出部分 */
+    white-space: nowrap; /* 禁止換行 */
+    overflow: hidden; /* 隱藏超出的內容 */
+    text-overflow: ellipsis;
 }
-
 
 .centered-div {
     width: 100%;
@@ -72,7 +74,6 @@ body {
     padding: 20px; /* 容器的內邊距 */
 }
 
-
 .box {
     width: 500px; /* 長方形的寬度 */
     height: 250px; /* 長方形的高度 */
@@ -84,7 +85,7 @@ body {
 
 .box {
     width: 500px;
-    height: auto; /* 高度根據內容自適應 */
+    height: 250px;
     background-color: rgba(20, 20, 20, 0.9);
     border: 2px solid gray;
     border-radius: 20px;
@@ -92,6 +93,19 @@ body {
     color: white;
     padding: 20px;
     text-align: center;
+    overflow: hidden; /* 隱藏超出的內容 */
 }
 
+.box h1 { /* 針對標題 */
+    white-space: nowrap; /* 禁止換行 */
+    overflow: hidden; /* 隱藏超出的內容 */
+    text-overflow: ellipsis; /* 超出部分顯示省略號 */
+    display: block; /* 確保元素是區塊級 */
+    width: 100%; /* 確保其內容限制在box範圍內 */
+}
 
+.box p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
