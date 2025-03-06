@@ -34,3 +34,31 @@ body {
     min-height: 100vh; /* 讓每個區塊高度至少為一個視窗高度 */
     border-top: 1px solid gray; /* 區塊之間添加分隔線 */
 }
+
+.button-menu {
+    display: flex; /* 使用 Flexbox 讓按鈕排成一排 */
+    justify-content: center; /* 將按鈕置於水平中央 */
+    align-items: center; /* 垂直置中 */
+    gap: 10px; /* 按鈕之間的間距 */
+    position: absolute;
+    top: 10%; /* 定位到容器的垂直中央 */
+    left: 50%; /* 定位到容器的水平中央 */
+    transform: translate(-50%, -50%); /* 讓位置完全居中 */
+}
+
+.button-menu button {
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+    color: black; /* 按鈕文字顏色 */
+    border: none; /* 移除邊框 */
+    border-radius: 5px; /* 按鈕圓角 */
+    padding: 10px 20px; /* 調整內邊距 */
+    cursor: pointer; /* 滑鼠移上時顯示手型 */
+    font-size: 16px; /* 調整按鈕文字大小 */
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* 動畫效果 */
+}
+
+.button-menu button:hover {
+    background-color: orange; /* 滑鼠懸停時改變背景顏色 */
+    color: white; /* 滑鼠懸停時改變文字顏色 */
+}
