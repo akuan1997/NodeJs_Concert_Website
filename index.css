@@ -85,56 +85,142 @@ body {
     font-size: 48px
 }
 
+/*.box {*/
+/*    width: 500px;*/
+/*    height: 250px;*/
+/*    background-color: rgba(20, 20, 20, 0.9);*/
+/*    border: 2px solid gray;*/
+/*    border-radius: 20px;*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);*/
+/*    color: white;*/
+/*    padding: 20px;*/
+/*    text-align: center;*/
+/*    overflow: hidden; !* 隱藏超出的內容 *!*/
+/*}*/
+
+/*.box h1 { !* 針對標題 *!*/
+/*    white-space: nowrap; !* 禁止換行 *!*/
+/*    overflow: hidden; !* 隱藏超出的內容 *!*/
+/*    text-overflow: ellipsis; !* 超出部分顯示省略號 *!*/
+/*    display: block; !* 確保元素是區塊級 *!*/
+/*    width: 100%; !* 確保其內容限制在box範圍內 *!*/
+/*}*/
+
+/*.box p {*/
+/*    white-space: nowrap;*/
+/*    overflow: hidden;*/
+/*    text-overflow: ellipsis;*/
+/*}*/
+
 .box {
     width: 500px;
     height: 250px;
-    background-color: rgba(20, 20, 20, 0.9);
-    border: 2px solid gray;
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.8), rgba(60, 60, 60, 0.6));
+    border: 2px solid rgba(255, 255, 255, 0.2); /* 玻璃感邊框 */
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* 霓虹燈效果 */
     color: white;
     padding: 20px;
     text-align: center;
-    overflow: hidden; /* 隱藏超出的內容 */
+    overflow: hidden;
+    backdrop-filter: blur(10px); /* 增加玻璃感 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.box h1 { /* 針對標題 */
-    white-space: nowrap; /* 禁止換行 */
-    overflow: hidden; /* 隱藏超出的內容 */
-    text-overflow: ellipsis; /* 超出部分顯示省略號 */
-    display: block; /* 確保元素是區塊級 */
-    width: 100%; /* 確保其內容限制在box範圍內 */
+.box:hover {
+    transform: scale(1.05); /* 放大 5% */
+    box-shadow: 0 0 25px rgba(255, 100, 100, 0.8); /* 增強霓虹感 */
 }
 
+/* 針對標題 */
+.box h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: 100%;
+    font-size: 24px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* 霓虹紅色字 */
+}
+
+/* 針對內容文字 */
 .box p {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 16px;
+    color: #ddd;
 }
 
 
-.more-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
+.box a {
+    display: inline-block;
+    margin-top: 10px;
     padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
+    background-color: #FF4C4C; /* 按鈕式紅色背景 */
+    color: white; /* 文字白色 */
+    text-decoration: none; /* 移除底線 */
+    font-weight: bold;
     border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 76, 76, 0.8); /* 霓虹燈效果 */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.box a:hover {
+    background-color: #B02A2A; /* 深紅色 */
+    box-shadow: 0 0 20px rgba(255, 100, 100, 1); /* 增強霓虹燈效果 */
+    transform: scale(1.1); /* 微放大 */
+}
+
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/*.more-button {*/
+/*    background-color: #FF4C4C;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    padding: 8px 16px;*/
+/*    font-size: 36px;*/
+/*    cursor: pointer;*/
+/*    border-radius: 10px;*/
+/*    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);*/
+/*    text-align: center;*/
+/*}*/
+
+/*.more-button:hover {*/
+/*    !*background-color: #C23333;*!*/
+/*    background-color: #B02A2A; !* better *!*/
+/*}*/
+
+.more-button {
+    background: linear-gradient(135deg, #FFD700, #FFA500); /* 黃金色漸變 */
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* 霓虹黃金光 */
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    animation: pulse-gold 1.5s infinite alternate;
+}
+
+@keyframes pulse-gold {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 165, 0, 1);
+    }
 }
 
 .more-button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(135deg, #FFA500, #FF8C00); /* 深金色 */
+    box-shadow: 0 0 25px rgba(255, 165, 0, 1); /* 強化霓虹光 */
+    transform: scale(1.1);
 }
-
-
-/*.content-section {*/
-/*    position: relative;*/
-/*    padding: 20px;*/
-/*}*/
-
-/*.section-header {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    align-items: center;*/
-/*}*/
