@@ -18,7 +18,8 @@ app.use(express.urlencoded({extended: true}))
 app.get("/api/data", async (req, res) => {
     try {
         const data = await concertModel.find().limit(6);
-        res.status(200).json(data);
+        // res.status(200).json(data);
+        res.status(200).json({ data, nbHits: data.length })
     } catch (error) {
         res.status(500).json({error: error.message});
     }

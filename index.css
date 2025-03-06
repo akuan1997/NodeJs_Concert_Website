@@ -74,11 +74,24 @@ body {
 
 
 .box {
-    width: 500px; /* 長方形寬度 */
-    height: 250px; /* 長方形高度 */
-    background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+    width: 500px; /* 長方形的寬度 */
+    height: 250px; /* 長方形的高度 */
+    background-color: rgba(20, 20, 20, 0.9); /* 偏灰的黑色背景，帶一點透明度 */
     border: 2px solid gray; /* 添加邊框 */
-    border-radius: 20px; /* 圓弧的角度，值越大圓弧越明顯 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 選擇性：為方塊添加陰影效果 */
+    border-radius: 20px; /* 添加圓角效果 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 為方塊增加輕微陰影，增強立體感 */
 }
+
+.box {
+    width: 500px;
+    height: auto; /* 高度根據內容自適應 */
+    background-color: rgba(20, 20, 20, 0.9);
+    border: 2px solid gray;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
 
