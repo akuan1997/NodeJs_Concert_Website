@@ -7,7 +7,7 @@ const concertSchema = new mongoose.Schema({
     },
     sdt: {
         type: [String],  // 陣列（Array）類型
-        default: []
+        set: v => (v.length === 0 ? [" -"] : v) // 如果傳入的是空陣列，替換為預設值
     },
     prc: {
         type: [Number],  // 陣列（Array）類型
@@ -15,14 +15,15 @@ const concertSchema = new mongoose.Schema({
     },
     pdt: {
         type: [String],  // 陣列（Array）類型
-        default: []
+        set: v => (v.length === 0 ? [" -"] : v) // 如果傳入的是空陣列，替換為預設值
     },
     loc: {
         type: [String],  // 陣列（Array）類型
-        default: []
+        set: v => (v.length === 0 ? [" -"] : v) // 如果傳入的是空陣列，替換為預設值
     },
     cit: {
-        type: String
+        type: String,
+        set: v => (v.length === 0 ? "-" : v) // 如果傳入的是空陣列，替換為預設值
     },
     int: {
         type: String
