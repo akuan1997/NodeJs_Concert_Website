@@ -3,25 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>多區塊範例</title>
+    <title>演唱會資訊整理</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
 <div class="cover-container">
-    <!--    <div class="button-menu">-->
-    <!--        <button>Home</button>-->
-    <!--        <button>About</button>-->
-    <!--        <button>Contact</button>-->
-    <!--        <button>Services</button>-->
-    <!--    </div>-->
     <div class="search-container"><label for="city">城市</label>
         <select id="city">
+            <option value="none"> - </option>
             <option value="taipei">台北</option>
+            <option value="new_taipei">新北</option>
             <option value="kaohsiung">高雄</option>
             <option value="others">其他</option>
-            <!--        <option value="south">South</option>-->
-            <!--        <option value="east">East</option>-->
-            <!--        <option value="islands">Outlying Islands</option>-->
         </select>
         <label for="start-date">Start</label>
         <input type="date" id="start-date">
@@ -35,13 +28,8 @@
     <div class="latest-info">
         <h1>最新資訊</h1>
     </div>
+    <!--    容器，用來放置動態生成的 box 元素。-->
     <div class="grid-container" id="grid-container">
-<!--        <div class="box"></div>-->
-<!--        <div class="box"></div>-->
-<!--        <div class="box"></div>-->
-<!--        <div class="box"></div>-->
-<!--        <div class="box"></div>-->
-<!--        <div class="box"></div>-->
     </div>
     <div class="button-container">
         <button class="more-button">查看更多</button>
