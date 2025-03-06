@@ -17,7 +17,8 @@ app.use(express.urlencoded({extended: true}))
 // 路由 - 示範資料 API
 app.get("/api/data", async (req, res) => {
     try {
-        const data = await concertModel.find().limit(6);
+        // const data = await concertModel.find().limit(6);
+        const data = await concertModel.find().sort({ "tim": -1 }).limit(6);  // 1升序，-1降序
         // res.status(200).json(data);
         res.status(200).json({ data, nbHits: data.length })
     } catch (error) {
