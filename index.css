@@ -62,3 +62,23 @@ body {
     background-color: orange; /* 滑鼠懸停時改變背景顏色 */
     color: white; /* 滑鼠懸停時改變文字顏色 */
 }
+
+.grid-container {
+    display: grid; /* 使用 Grid 布局 */
+    grid-template-columns: repeat(3, auto); /* 每行 3 列，自動調整方塊大小 */
+    gap: 20px; /* 控制方塊之間的間距 */
+    justify-content: center; /* 將整個網格內容水平置中 */
+    align-items: center; /* 將內容垂直置中 */
+    padding: 20px; /* 容器的內邊距 */
+}
+
+
+.box {
+    width: 500px; /* 長方形寬度 */
+    height: 250px; /* 長方形高度 */
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+    border: 2px solid gray; /* 添加邊框 */
+    border-radius: 20px; /* 圓弧的角度，值越大圓弧越明顯 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 選擇性：為方塊添加陰影效果 */
+}
+
