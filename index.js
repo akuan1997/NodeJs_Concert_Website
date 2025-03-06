@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             box.classList.add("box");
             box.innerHTML = `
                 <h1>${item.tit}</h1>
-                <h2>${item.cit}</h2>
+                <h2>${item.cit || '-'}</h2>
                 <p><strong>日期：</strong> ${item.pdt}</p>
                 <p><strong>票價：</strong> ${item.prc.join(", ")}</p>
                 <a href="${item.url}" target="_blank">購票連結</a>
