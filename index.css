@@ -114,7 +114,7 @@ body {
 
 .box {
     width: 500px;
-    height: 250px;
+    height: 300px;
     background: linear-gradient(135deg, rgba(30, 30, 30, 0.8), rgba(60, 60, 60, 0.6));
     border: 2px solid rgba(255, 255, 255, 0.2); /* 玻璃感邊框 */
     border-radius: 20px;
@@ -222,5 +222,118 @@ body {
 .more-button:hover {
     background: linear-gradient(135deg, #FFA500, #FF8C00); /* 深金色 */
     box-shadow: 0 0 25px rgba(255, 165, 0, 1); /* 強化霓虹光 */
+    transform: scale(1.1);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+    padding: 10px 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.search-container label {
+    color: white;
+    font-weight: bold;
+}
+
+.search-container select, .search-container input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+.pdt-button {
+    background-color: orange;
+    font-size: 16px; /* 調整按鈕文字大小 */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.pdt-button:hover {
+    background-color: red;
+}
+
+.sdt-button {
+    background-color: orange;
+    font-size: 16px; /* 調整按鈕文字大小 */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.sdt-button:hover {
+    background-color: red;
+}
+
+.next-page-button {
+    background: linear-gradient(135deg, #FFD700, #FFA500); /* 黃金色漸變 */
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* 霓虹黃金光 */
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    animation: pulse-gold 1.5s infinite alternate;
+}
+
+@keyframes pulse-gold {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 165, 0, 1);
+    }
+}
+
+.next-page-button:hover {
+    background: linear-gradient(135deg, #FFA500, #FF8C00); /* 深金色 */
+    box-shadow: 0 0 25px rgba(255, 165, 0, 1); /* 強化霓虹光 */
+    transform: scale(1.1);
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#page-info {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFD700; /* 金色文字 */
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* 霓虹黃金光 */
+    text-align: center;
+    margin: 0 15px;
+    min-width: 120px; /* 確保有足夠的空間 */
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+#page-info:hover {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 1); /* 增強霓虹光 */
     transform: scale(1.1);
 }
