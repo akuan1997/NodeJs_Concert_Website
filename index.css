@@ -74,6 +74,17 @@ body {
     padding: 20px; /* 容器的內邊距 */
 }
 
+.latest-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.latest-info h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 48px
+}
+
 .box {
     width: 500px;
     height: 250px;
