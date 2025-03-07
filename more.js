@@ -41,6 +41,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             prevButton.disabled = currentPage === 1;
             nextButton.disabled = currentPage >= data.totalPages;
 
+            // 捲動到頁面頂部
+            window.scrollTo(0, 0);
+
         } catch (error) {
             console.error("獲取資料時發生錯誤:", error);
         }
