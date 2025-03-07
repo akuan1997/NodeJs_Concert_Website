@@ -101,3 +101,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 });
+
+document.querySelector(".pdt-button").addEventListener("click", function () {
+    const startDate = document.getElementById("start-date").value;
+    const endDate = document.getElementById("end-date").value;
+    if (!startDate || !endDate) {
+        alert("請選擇開始和結束日期！");
+        return;
+    } // 跳轉到query.html頁面，並帶上日期參數
+    window.location.href = `query.html?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
+});
+
