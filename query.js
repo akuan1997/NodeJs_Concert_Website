@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
-        const startDateObj = new Date(startDate);
-        const endDateObj = new Date(endDate);
+        const startDateObj = new Date(startDate);  // object
+        const endDateObj = new Date(endDate);  // object
 
         filteredData = result.data.filter(item =>
             item.pdt.some(dateStr => {
