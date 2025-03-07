@@ -34,8 +34,35 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
 
             // 額外內容區塊
-            sdtContent.innerHTML = "";
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
 
+            const sdtData = data.data.filter(item => {
+                return item.sdt.some(dateStr => {
+                    const parts = dateStr.split(' ')[0].split('/');
+                    console.log(parts);
+                    const itemDate = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+                    console.log(itemDate); // 比較年、月、日是否相同，而不是直接比較 Date 物件
+                    return itemDate.getFullYear() === tomorrow.getFullYear() &&
+                        itemDate.getMonth() === tomorrow.getMonth() &&
+                        itemDate.getDate() === tomorrow.getDate();
+                });
+            });
+            console.log(sdtData.length)
+
+            sdtData.forEach(item => {
+                const box = document.createElement("div");
+                box.classList.add("box");
+                box.innerHTML = `
+                <h1>${item.tit}</h1>
+                <h2>${item.cit}</h2>
+                <p><strong>日期：</strong> ${item.pdt}</p>
+                <p><strong>售票時間：</strong>${item.sdt !== undefined && item.sdt !== null && item.sdt !== '' ? item.sdt : '-'}</p>
+                <p><strong>票價：</strong> ${item.prc.join(", ")}</p>
+                <a href="${item.url}" target="_blank">購票連結</a>
+            `;
+                sdtContent.appendChild(box);
+            });
 
         } catch
             (error) {
