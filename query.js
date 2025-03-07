@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const startDate = urlParams.get('startDate');
     const endDate = urlParams.get('endDate');
 
-    if (!startDate || !endDate) {
-        gridContainer.innerHTML = "<p>錯誤：未提供日期範圍</p>";
+    if (!startDate && !endDate) {
+        gridContainer.innerHTML = "<p>錯誤：未提供日期範圍!</p>";
         return;
     }
 
-    dateRangeInfo.innerHTML = `<p>搜尋時間範圍：${startDate} 至 ${endDate}</p>`;
+    dateRangeInfo.innerHTML = `<p>搜尋時間範圍：${startDate || '不限'} 至 ${endDate || '不限'}</p>`;
 
     try {
         const response = await fetch("http://localhost:3000/api/data");
@@ -34,15 +34,23 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
-        const startDateObj = new Date(startDate);  // object
-        const endDateObj = new Date(endDate);  // object
+        const startDateObj = startDate ? new Date(startDate) : null;
+        const endDateObj = endDate ? new Date(endDate) : null;
 
         filteredData = result.data.filter(item =>
             item.pdt.some(dateStr => {
                 const parts = dateStr.split(' ')[0].split('/');
                 if (parts.length < 3) return false;
                 const itemDate = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
-                return itemDate >= startDateObj && itemDate <= endDateObj;
+
+                if (startDateObj && endDateObj) {
+                    return itemDate >= startDateObj && itemDate <= endDateObj;
+                } else if (startDateObj) {
+                    return itemDate >= startDateObj;
+                } else if (endDateObj) {
+                    return itemDate <= endDateObj;
+                }
+                return false;
             })
         );
 
@@ -83,8 +91,26 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
 
         pageInfo.textContent = `第 ${currentPage} 頁`;
-        prevButton.disabled = currentPage === 1;
-        nextButton.disabled = end >= filteredData.length;
+        if (currentPage === 1) {
+            prevButton.style.visibility = "hidden";
+            prevButton.disabled = true
+        } else {
+            prevButton.style.visibility = "visible";
+            prevButton.disabled = false
+        }
+        if (end >= filteredData.length) {
+            nextButton.style.visibility = "hidden";
+            nextButton.disabled = true
+        } else {
+            nextButton.style.visibility = "visible";
+            nextButton.disabled = false
+        }
+        // 捲動到頁面頂部
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        // prevButton.disabled = currentPage === 1;
+        // nextButton.disabled = end >= filteredData.length;
+
+
     }
 
     prevButton.addEventListener("click", () => {
@@ -105,10 +131,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 document.querySelector(".city_date_button").addEventListener("click", function () {
     const startDate = document.getElementById("start-date").value;
     const endDate = document.getElementById("end-date").value;
-    if (!startDate || !endDate) {
-        alert("請選擇開始和結束日期！");
-        return;
-    } // 跳轉到query.html頁面，並帶上日期參數
-    window.location.href = `query.html?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
-});
+    const cityObj = document.getElementById('city').value;
+    console.log(cityObj)
 
+    if (!startDate && !endDate) {
+        alert("請選擇開始和結束日期！ 123");
+        return;
+    }
+
+    let url = `query.html?`;
+    if (startDate) url += `startDate=${encodeURIComponent(startDate)}&`;
+    if (endDate) url += `endDate=${encodeURIComponent(endDate)}`;
+    window.location.href = url;
+});
