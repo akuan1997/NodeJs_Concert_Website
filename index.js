@@ -36,19 +36,26 @@ document.addEventListener("DOMContentLoaded", async () => {
             // 額外內容區塊
             const tomorrow = new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
-
+            const nextWeek = new Date();
+            nextWeek.setDate(nextWeek.getDate() + 7);
             const sdtData = data.data.filter(item => {
                 return item.sdt.some(dateStr => {
                     const parts = dateStr.split(' ')[0].split('/');
-                    console.log(parts);
                     const itemDate = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
-                    console.log(itemDate); // 比較年、月、日是否相同，而不是直接比較 Date 物件
-                    return itemDate.getFullYear() === tomorrow.getFullYear() &&
-                        itemDate.getMonth() === tomorrow.getMonth() &&
-                        itemDate.getDate() === tomorrow.getDate();
+                    return itemDate >= tomorrow && itemDate <= nextWeek;
                 });
             });
-            console.log(sdtData.length)
+
+            sdtData.sort((a, b) => {
+                const getEarliestDate = (item) => {
+                    return new Date(Math.min(...item.sdt.map(dateStr => {
+                        const parts = dateStr.split(' ')[0].split('/');
+                        return new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+                    })));
+                };
+                return getEarliestDate(a) - getEarliestDate(b);
+            });
+            console.log(sdtData.length);
 
             sdtData.forEach(item => {
                 const box = document.createElement("div");
