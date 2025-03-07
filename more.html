@@ -8,18 +8,22 @@
 </head>
 <body>
 <div class="cover-container">
-    <div class="search-container"><label for="city">城市</label>
+    <div class="search-container">
+        <label for="city">城市</label>
         <select id="city">
+            <option value="city_empty">未選擇</option>
             <option value="taipei">台北</option>
+            <option value="new_taipei">新北</option>
             <option value="kaohsiung">高雄</option>
-            <option value="others">其他</option>
+            <option value="others">輸入其他城市</option>
         </select>
+        <input type="text" id="custom-city" placeholder="請輸入城市" style="display: none; width: 4em;">
         <label for="start-date">Start</label>
         <input type="date" id="start-date">
         <label for="end-date">End</label>
         <input type="date" id="end-date">
-        <button class="city_date_button">表演時間</button>
-<!--        <button class="sdt-button">售票時間</button>-->
+        <button class="city_date_button">搜尋</button>
+        <!--        <button class="sdt-button">售票時間</button>-->
     </div>
 </div>
 <div class="content-section">
