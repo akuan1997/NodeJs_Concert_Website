@@ -3,7 +3,7 @@ require('dotenv').config();
 const connectDB = require('./db/connect');
 const Concert = require('./models/concert');
 
-const jsonConcertData = require('./concert_zh.json');
+const jsonConcertData = require('./concertData/concert_zh.json');
 
 const start = async () => {
     try {
