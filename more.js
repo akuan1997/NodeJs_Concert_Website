@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
 
             // 捲動到頁面頂部
-            window.scrollTo(0, 0);
+            window.scrollTo({ top: 0, behavior: "smooth" });
 
         } catch (error) {
             console.error("獲取資料時發生錯誤:", error);
