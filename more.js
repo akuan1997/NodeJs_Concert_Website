@@ -44,18 +44,18 @@ document.addEventListener("DOMContentLoaded", async () => {
             // nextButton.disabled = currentPage >= data.totalPages;
 
             if (currentPage === 1) {
-                prevButton.disabled = true
                 prevButton.style.visibility = "hidden";
+                prevButton.disabled = true
             } else {
-                prevButton.disabled = false
                 prevButton.style.visibility = "visible";
+                prevButton.disabled = false
             }
             if (currentPage >= data.totalPages) {
-                nextButton.disabled = true
                 nextButton.style.visibility = "hidden";
+                nextButton.disabled = true
             } else {
-                nextButton.disabled = false
                 nextButton.style.visibility = "visible";
+                nextButton.disabled = false
             }
 
             // 捲動到頁面頂部
