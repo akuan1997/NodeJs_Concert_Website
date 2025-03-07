@@ -74,12 +74,12 @@ body {
     padding: 20px; /* 容器的內邊距 */
 }
 
-.latest-info {
+.latest-info, .sell-info {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.latest-info h1 {
+.latest-info h1, .sell-info h1 {
     margin: 0;
     padding: 0;
     font-size: 48px
@@ -223,7 +223,7 @@ body {
     border: none;
 }
 
-.pdt-button {
+.city_date_button {
     background-color: orange;
     font-size: 16px; /* 調整按鈕文字大小 */
     color: white;
@@ -235,25 +235,25 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.pdt-button:hover {
+.city_date_button:hover {
     background-color: red;
 }
 
-.sdt-button {
-    background-color: orange;
-    font-size: 16px; /* 調整按鈕文字大小 */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
+/*.sdt-button {*/
+/*    background-color: orange;*/
+/*    font-size: 16px; !* 調整按鈕文字大小 *!*/
+/*    color: white;*/
+/*    padding: 10px 20px;*/
+/*    border-radius: 5px;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*    font-weight: bold;*/
+/*    transition: background-color 0.3s ease;*/
+/*}*/
 
-.sdt-button:hover {
-    background-color: red;
-}
+/*.sdt-button:hover {*/
+/*    background-color: red;*/
+/*}*/
 
 .next-page-button {
     background: linear-gradient(135deg, #FFD700, #FFA500); /* 黃金色漸變 */
@@ -320,4 +320,17 @@ body {
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
     display: inline-block;
     margin: 10px auto;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+    margin-left: 10px;
+}
+
+.search-btn:hover {
+    color: #000;
 }
