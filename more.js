@@ -35,11 +35,28 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             // 更新分頁資訊
             currentPage = data.page;
+            console.log("當前頁數:", currentPage);
+            console.log("總頁數:", data.totalPages);
             pageInfo.textContent = `第 ${currentPage} 頁`;
 
-            // 控制按鈕狀態
-            prevButton.disabled = currentPage === 1;
-            nextButton.disabled = currentPage >= data.totalPages;
+            // // 控制按鈕狀態
+            // prevButton.disabled = currentPage === 1;
+            // nextButton.disabled = currentPage >= data.totalPages;
+
+            if (currentPage === 1) {
+                prevButton.disabled = true
+                prevButton.style.visibility = "hidden";
+            } else {
+                prevButton.disabled = false
+                prevButton.style.visibility = "visible";
+            }
+            if (currentPage >= data.totalPages) {
+                nextButton.disabled = true
+                nextButton.style.visibility = "hidden";
+            } else {
+                nextButton.disabled = false
+                nextButton.style.visibility = "visible";
+            }
 
             // 捲動到頁面頂部
             window.scrollTo(0, 0);
@@ -54,6 +71,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 上一頁按鈕
     prevButton.addEventListener("click", () => {
+        console.log('點擊上一頁')
         if (currentPage > 1) {
             fetchData(currentPage - 1);
         }
@@ -61,6 +79,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 下一頁按鈕
     nextButton.addEventListener("click", () => {
+        console.log('點擊上一頁')
         fetchData(currentPage + 1);
     });
 });
