@@ -1,3 +1,34 @@
+const citySelect = document.getElementById('city');
+const customCityInput = document.getElementById('custom-city');
+
+citySelect.addEventListener('change', () => {
+    if (citySelect.value === 'others') {
+        customCityInput.style.display = 'block'; // 顯示輸入框
+    } else {
+        customCityInput.style.display = 'none'; // 隱藏輸入框
+        customCityInput.value = ''; // 清空輸入框內容
+    }
+});
+
+document.querySelector('.pdt-button').addEventListener('click', () => {
+    let city = '';
+    if (citySelect.value === 'others') {
+        city = customCityInput.value.trim(); // 獲取輸入框內容
+        if (city === '') {
+            alert('請輸入城市名稱！');
+            return;
+        }
+    } else {
+        city = citySelect.options[citySelect.selectedIndex].text; // 獲取下拉選單的選項文字
+    }
+
+    const startDate = document.getElementById('start-date').value;
+    const endDate = document.getElementById('end-date').value;
+    console.log(`搜尋城市：${city}, 開始日期：${startDate}, 結束日期：${endDate}`);
+    // 在這裡添加進一步的搜尋邏輯
+});
+
+
 document.addEventListener("DOMContentLoaded", async () => {
         const gridContainer = document.getElementById("grid-container");
         const sdtContent = document.getElementById("sdt-container");
@@ -35,7 +66,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             // 額外內容區塊
             const tomorrow = new Date();
-            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setDate(tomorrow.getDate());
             const nextWeek = new Date();
             nextWeek.setDate(nextWeek.getDate() + 7);
             const sdtData = data.data.filter(item => {
