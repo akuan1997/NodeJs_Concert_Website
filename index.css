@@ -85,33 +85,6 @@ body {
     font-size: 48px
 }
 
-/*.box {*/
-/*    width: 500px;*/
-/*    height: 250px;*/
-/*    background-color: rgba(20, 20, 20, 0.9);*/
-/*    border: 2px solid gray;*/
-/*    border-radius: 20px;*/
-/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);*/
-/*    color: white;*/
-/*    padding: 20px;*/
-/*    text-align: center;*/
-/*    overflow: hidden; !* 隱藏超出的內容 *!*/
-/*}*/
-
-/*.box h1 { !* 針對標題 *!*/
-/*    white-space: nowrap; !* 禁止換行 *!*/
-/*    overflow: hidden; !* 隱藏超出的內容 *!*/
-/*    text-overflow: ellipsis; !* 超出部分顯示省略號 *!*/
-/*    display: block; !* 確保元素是區塊級 *!*/
-/*    width: 100%; !* 確保其內容限制在box範圍內 *!*/
-/*}*/
-
-/*.box p {*/
-/*    white-space: nowrap;*/
-/*    overflow: hidden;*/
-/*    text-overflow: ellipsis;*/
-/*}*/
-
 .box {
     width: 500px;
     height: 300px;
@@ -336,4 +309,15 @@ body {
 #page-info:hover {
     box-shadow: 0 0 25px rgba(255, 215, 0, 1); /* 增強霓虹光 */
     transform: scale(1.1);
+}
+
+.date-range-info {
+    text-align: center;
+    font-size: 20px;
+    background: rgba(30, 30, 30, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+    display: inline-block;
+    margin: 10px auto;
 }
