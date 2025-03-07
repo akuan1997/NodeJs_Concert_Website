@@ -18,7 +18,8 @@ app.use(express.urlencoded({extended: true}))
 app.get("/api/data", async (req, res) => {
     try {
         // const data = await concertModel.find().limit(6);
-        const data = await concertModel.find().sort({"tim": -1});  // 1升序，-1降序
+        // const data = await concertModel.find().sort({"tim": -1});  // 1升序，-1降序
+        const data = await concertModel.find()
         // res.status(200).json(data);
         res.status(200).json({data, nbHits: data.length})
     } catch (error) {
