@@ -10,7 +10,7 @@ citySelect.addEventListener('change', () => {
     }
 });
 
-document.querySelector('.pdt-button').addEventListener('click', () => {
+document.querySelector('.city_date_button').addEventListener('click', () => {
     let city = '';
     if (citySelect.value === 'others') {
         city = customCityInput.value.trim(); // 獲取輸入框內容
@@ -114,7 +114,7 @@ document.querySelector(".more-button").addEventListener("click", () => {
     window.location.href = "more.html";
 });
 
-document.querySelector(".pdt-button").addEventListener("click", function () {
+document.querySelector(".city_date_button").addEventListener("click", function () {
     const startDate = document.getElementById("start-date").value;
     const endDate = document.getElementById("end-date").value;
     if (!startDate || !endDate) {

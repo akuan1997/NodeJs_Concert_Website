@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 });
 
-document.querySelector(".pdt-button").addEventListener("click", function () {
+document.querySelector(".city_date_button").addEventListener("click", function () {
     const startDate = document.getElementById("start-date").value;
     const endDate = document.getElementById("end-date").value;
     if (!startDate || !endDate) {
