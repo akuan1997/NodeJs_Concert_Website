@@ -1,34 +1,3 @@
-const citySelect = document.getElementById('city');
-const customCityInput = document.getElementById('custom-city');
-
-citySelect.addEventListener('change', () => {
-    if (citySelect.value === 'others') {
-        customCityInput.style.display = 'block'; // 顯示輸入框
-    } else {
-        customCityInput.style.display = 'none'; // 隱藏輸入框
-        customCityInput.value = ''; // 清空輸入框內容
-    }
-});
-
-document.querySelector('.city_date_button').addEventListener('click', () => {
-    let city = '';
-    if (citySelect.value === 'others') {
-        city = customCityInput.value.trim(); // 獲取輸入框內容
-        if (city === '') {
-            alert('請輸入城市名稱！');
-            return;
-        }
-    } else {
-        city = citySelect.options[citySelect.selectedIndex].text; // 獲取下拉選單的選項文字
-    }
-
-    const startDate = document.getElementById('start-date').value;
-    const endDate = document.getElementById('end-date').value;
-    console.log(`搜尋城市：${city}, 開始日期：${startDate}, 結束日期：${endDate}`);
-    // 在這裡添加進一步的搜尋邏輯
-});
-
-
 document.addEventListener("DOMContentLoaded", async () => {
         const gridContainer = document.getElementById("grid-container");
         const sdtContent = document.getElementById("sdt-container");
@@ -114,13 +83,80 @@ document.querySelector(".more-button").addEventListener("click", () => {
     window.location.href = "more.html";
 });
 
-document.querySelector(".city_date_button").addEventListener("click", function () {
-    const startDate = document.getElementById("start-date").value;
-    const endDate = document.getElementById("end-date").value;
-    if (!startDate && !endDate) {
-        alert("請選擇開始和結束日期！ 123");
-        return;
-    } // 跳轉到query.html頁面，並帶上日期參數
-    window.location.href = `query.html?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
+// document.querySelector('.city_date_button').addEventListener('click', () => {
+//     let city = '';
+//     if (citySelect.value === 'others') {
+//         city = customCityInput.value.trim(); // 獲取輸入框內容
+//         if (city === '') {
+//             alert('請輸入城市名稱！');
+//             return;
+//         }
+//     } else {
+//         city = citySelect.options[citySelect.selectedIndex].text; // 獲取下拉選單的選項文字
+//     }
+//
+//     const startDate = document.getElementById('start-date').value;
+//     const endDate = document.getElementById('end-date').value;
+//     console.log(`搜尋城市：${city}, 開始日期：${startDate}, 結束日期：${endDate}`);
+//     // 在這裡添加進一步的搜尋邏輯
+// });
+//
+// document.querySelector(".city_date_button").addEventListener("click", function () {
+//     const startDate = document.getElementById("start-date").value;
+//     const endDate = document.getElementById("end-date").value;
+//     const cityObj = document.getElementById('city').value;
+//     console.log(cityObj)
+//
+//     if (cityObj === "city_empty" && !startDate && !endDate) {
+//         alert("請選擇開始、開始日期或是結束日期任一欄位！");
+//         return;
+//     } // 跳轉到query.html頁面，並帶上日期參數
+//     window.location.href = `query.html?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
+// });
+
+const citySelect = document.getElementById('city');
+const customCityInput = document.getElementById('custom-city');
+
+citySelect.addEventListener('change', () => {
+    if (citySelect.value === 'others') {
+        customCityInput.style.display = 'block'; // 顯示輸入框
+    } else {
+        customCityInput.style.display = 'none'; // 隱藏輸入框
+        customCityInput.value = ''; // 清空輸入框內容
+    }
 });
 
+document.querySelector('.city_date_button').addEventListener('click', () => {
+    // 獲取日期值
+    const startDate = document.getElementById('start-date').value;
+    const endDate = document.getElementById('end-date').value;
+
+    // 處理城市選擇邏輯
+    const citySelect = document.getElementById('city'); // 假設這是您的select元素ID
+    const customCityInput = document.getElementById('custom-city'); // 假設這是您的自定義輸入框ID
+    let city = '';
+
+    if (citySelect.value === 'others') {
+        city = customCityInput.value.trim(); // 獲取輸入框內容
+        if (city === '') {
+            alert('請輸入城市名稱！');
+            return;
+        }
+        city = city.replace(/臺/g, '台');
+    } else if (citySelect.value === "city_empty") {
+        // 檢查是否至少有一個日期被選擇
+        if (!startDate && !endDate) {
+            alert("請選擇開始、開始日期或是結束日期任一欄位！");
+            return;
+        }
+        // 如果沒有選城市但有選日期，使用空值繼續
+    } else {
+        city = citySelect.options[citySelect.selectedIndex].text; // 獲取下拉選單的選項文字
+    }
+
+    // 輸出選擇的值到控制台（保留原有功能）
+    console.log(`123 搜尋城市：${city}, 開始日期：${startDate}, 結束日期：${endDate}`);
+
+    // 執行頁面跳轉，帶上所有參數
+    window.location.href = `query.html?city=${encodeURIComponent(city)}&startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
+});
