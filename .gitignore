@@ -2,3 +2,5 @@
 *.iml
 .env
 images/
+concertData/
+node_modules/
