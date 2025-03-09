@@ -39,10 +39,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             console.log("總頁數:", data.totalPages);
             pageInfo.textContent = `第 ${currentPage} 頁`;
 
-            // // 控制按鈕狀態
-            // prevButton.disabled = currentPage === 1;
-            // nextButton.disabled = currentPage >= data.totalPages;
-
             if (currentPage === 1) {
                 prevButton.style.visibility = "hidden";
                 prevButton.disabled = true
