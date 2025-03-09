@@ -8,22 +8,29 @@
 </head>
 <body>
 <div class="cover-container">
-    <div class="search-container">
-        <label for="city">城市</label>
-        <select id="city">
-            <option value="city_empty">未選擇</option>
-            <option value="taipei">台北</option>
-            <option value="new_taipei">新北</option>
-            <option value="kaohsiung">高雄</option>
-            <option value="others">輸入其他城市</option>
-        </select>
-        <input type="text" id="custom-city" placeholder="請輸入城市" style="display: none; width: 4em;">
-        <label for="start-date">Start</label>
-        <input type="date" id="start-date">
-        <label for="end-date">End</label>
-        <input type="date" id="end-date">
-        <button class="city_date_button">搜尋</button>
-<!--        <button class="sdt-button">售票時間</button>-->
+    <div class="search-wrapper">
+        <div class="search-container">
+            <label for="city">城市</label>
+            <select id="city">
+                <option value="city_empty">未選擇</option>
+                <option value="taipei">台北</option>
+                <option value="new_taipei">新北</option>
+                <option value="kaohsiung">高雄</option>
+                <option value="others">輸入其他城市</option>
+            </select>
+            <input type="text" id="custom-city" placeholder="請輸入城市" style="display: none; width: 4em;">
+            <label for="start-date">Start</label>
+            <input type="date" id="start-date">
+            <label for="end-date">End</label>
+            <input type="date" id="end-date">
+            <button class="city_date_button">搜尋</button>
+            <!--        <button class="sdt-button">售票時間</button>-->
+        </div>
+        <div class="search-icon-container">
+            <img src="images/search-icon1.png" alt="搜尋" id="search-icon">
+    <!--        <input type="text" id="search-input" placeholder="請輸入搜尋內容">-->
+    <!--               style="display: none; width: 10em;">-->
+        </div>
     </div>
 </div>
 <div class="content-section">
