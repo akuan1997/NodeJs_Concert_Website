@@ -14,13 +14,11 @@ app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
+
 // 路由 - 示範資料 API
 app.get("/api/data", async (req, res) => {
     try {
-        // const data = await concertModel.find().limit(6);
-        // const data = await concertModel.find().sort({"tim": -1});  // 1升序，-1降序
         const data = await concertModel.find()
-        // res.status(200).json(data);
         res.status(200).json({data, nbHits: data.length})
     } catch (error) {
         res.status(500).json({error: error.message});
@@ -34,7 +32,7 @@ app.get("/api/more-data", async (req, res) => {
         const skip = (page - 1) * limit;
 
         const data = await concertModel.find()
-            .sort({ "tim": -1 }) // 依 tim 降序排列
+            .sort({"tim": -1}) // 依 tim 降序排列
             .skip(skip) // 跳過前面幾筆
             .limit(limit); // 取出指定數量的資料
 
@@ -48,12 +46,12 @@ app.get("/api/more-data", async (req, res) => {
             nbHits: data.length
         });
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        res.status(500).json({error: error.message});
     }
 });
 
 
-const start = async (req, res) => {
+const start = async () => {
     try {
         // connectDB
         await connectDB(process.env.MONGO_URI)
@@ -61,19 +59,6 @@ const start = async (req, res) => {
             console.log(`Server started on port ${port}`)
         })
     } catch (error) {
-        const start = async (req, res) => {
-            try {
-                // connectDB
-                await connectDB(process.env.MONGO_URI)
-                app.listen(port, () => {
-                    console.log(`Server started on port ${port}`)
-                })
-            } catch (error) {
-                console.log(error)
-            }
-        }
-
-        start()
         console.log(error)
     }
 }
