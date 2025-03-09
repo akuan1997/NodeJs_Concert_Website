@@ -27,7 +27,23 @@ const getMoreData = asyncWrapper(async (req, res) => {
     });
 });
 
+const getSearchData = asyncWrapper(async (req, res) => {
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 21;
+        const searchText = req.query.text ? req.query.text.trim() : "";
+        const query = {};
+        if (searchText) {
+            query.tit = {$regex: searchText, $options: 'i'};
+        }
+        const totalItems = await concertModel.countDocuments(query);
+        const totalPages = Math.ceil(totalItems / limit);
+        const data = await concertModel.find(query).skip((page - 1) * limit).limit(limit);
+        res.status(200).json({page, totalPages, data});
+    })
+;
+
 module.exports = {
     getAllData,
     getMoreData,
+    getSearchData
 }

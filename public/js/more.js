@@ -127,3 +127,15 @@ document.querySelector('.city_date_button').addEventListener('click', () => {
     // 執行頁面跳轉，帶上所有參數
     window.location.href = `query.html?city=${encodeURIComponent(city)}&startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
 });
+
+// 獲取搜尋按鈕和輸入框的元素
+const searchInput = document.getElementById('search-input')
+document.querySelector('#search-icon').addEventListener('click', () => {
+    const inputValue = searchInput.value; // 獲取用戶輸入的值
+    if (inputValue.trim() === '') {
+        alert('請輸入關鍵字');
+    } else {
+        console.log('搜尋關鍵字:', inputValue);
+        window.location.href = `search.html?text=${encodeURIComponent(inputValue)}`;
+    }
+})

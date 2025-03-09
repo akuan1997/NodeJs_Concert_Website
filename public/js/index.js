@@ -34,15 +34,15 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
 
             // 額外內容區塊
-            const tomorrow = new Date();
-            tomorrow.setDate(tomorrow.getDate());
+            const today = new Date();
+            today.setDate(today.getDate());
             const nextWeek = new Date();
             nextWeek.setDate(nextWeek.getDate() + 7);
             const sdtData = data.data.filter(item => {
                 return item.sdt.some(dateStr => {
                     const parts = dateStr.split(' ')[0].split('/');
                     const itemDate = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
-                    return itemDate >= tomorrow && itemDate <= nextWeek;
+                    return itemDate >= today && itemDate <= nextWeek;
                 });
             });
 
@@ -82,37 +82,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 document.querySelector(".more-button").addEventListener("click", () => {
     window.location.href = "more.html";
 });
-
-// document.querySelector('.city_date_button').addEventListener('click', () => {
-//     let city = '';
-//     if (citySelect.value === 'others') {
-//         city = customCityInput.value.trim(); // 獲取輸入框內容
-//         if (city === '') {
-//             alert('請輸入城市名稱！');
-//             return;
-//         }
-//     } else {
-//         city = citySelect.options[citySelect.selectedIndex].text; // 獲取下拉選單的選項文字
-//     }
-//
-//     const startDate = document.getElementById('start-date').value;
-//     const endDate = document.getElementById('end-date').value;
-//     console.log(`搜尋城市：${city}, 開始日期：${startDate}, 結束日期：${endDate}`);
-//     // 在這裡添加進一步的搜尋邏輯
-// });
-//
-// document.querySelector(".city_date_button").addEventListener("click", function () {
-//     const startDate = document.getElementById("start-date").value;
-//     const endDate = document.getElementById("end-date").value;
-//     const cityObj = document.getElementById('city').value;
-//     console.log(cityObj)
-//
-//     if (cityObj === "city_empty" && !startDate && !endDate) {
-//         alert("請選擇開始、開始日期或是結束日期任一欄位！");
-//         return;
-//     } // 跳轉到query.html頁面，並帶上日期參數
-//     window.location.href = `query.html?startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
-// });
 
 const citySelect = document.getElementById('city');
 const customCityInput = document.getElementById('custom-city');
@@ -160,3 +129,15 @@ document.querySelector('.city_date_button').addEventListener('click', () => {
     // 執行頁面跳轉，帶上所有參數
     window.location.href = `query.html?city=${encodeURIComponent(city)}&startDate=${encodeURIComponent(startDate)}&endDate=${encodeURIComponent(endDate)}`;
 });
+
+// 獲取搜尋按鈕和輸入框的元素
+const searchInput = document.getElementById('search-input')
+document.querySelector('#search-icon').addEventListener('click', () => {
+    const inputValue = searchInput.value; // 獲取用戶輸入的值
+    if (inputValue.trim() === '') {
+        alert('請輸入關鍵字');
+    } else {
+        console.log('搜尋關鍵字:', inputValue);
+        window.location.href = `search.html?text=${encodeURIComponent(inputValue)}`;
+    }
+})
