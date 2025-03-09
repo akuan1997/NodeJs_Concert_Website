@@ -5,7 +5,6 @@ const app = express()
 
 const ConcertRouter = require('./routes/concert')
 const connectDB = require('./db/connect')
-// const concertModel = require('./models/concert')
 
 const cors = require("cors");
 const port = 3000;
