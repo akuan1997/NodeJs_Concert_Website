@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-        const response = await fetch("http://localhost:3000/api/data");
+        const response = await fetch(`${window.location.origin}/api/data`);
         const result = await response.json();
 
         if (!result.data || !Array.isArray(result.data)) {

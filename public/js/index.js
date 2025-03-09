@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const sdtContent = document.getElementById("sdt-container");
 
         try {
-            const response = await fetch("http://localhost:3000/api/data"); // 向後端請求資料
+            const response = await fetch(`${window.location.origin}/api/data`);
             const data = await response.json();
             console.log('data', data); // 確認回傳的資料
 

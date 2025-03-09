@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     async function fetchData(page) {
         try {
             // **讓後端直接搜尋，而不是前端篩選**
-            const response = await fetch(`http://localhost:3000/api/search?page=${page}&limit=${limit}&text=${encodeURIComponent(searchText)}`);
+            const response = await fetch(`${window.location.origin}/api/search?page=${page}&limit=${limit}&text=${encodeURIComponent(searchText)}`);
             const data = await response.json();
             console.log('data - ', data)
             if (!data.data || !Array.isArray(data.data)) {

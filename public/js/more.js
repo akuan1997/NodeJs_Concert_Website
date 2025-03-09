@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     async function fetchData(page) {
         try {
-            const response = await fetch(`http://localhost:3000/api/more-data?page=${page}&limit=${limit}`);
+            const response = await fetch(`${window.location.origin}/api/more-data?page=${page}&limit=${limit}`);
             const data = await response.json();
 
             if (!data.data || !Array.isArray(data.data)) {
