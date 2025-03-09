@@ -2,6 +2,7 @@ require('dotenv').config()
 require('express-async-errors')
 const express = require('express')
 const app = express()
+const path = require('path');
 
 const ConcertRouter = require('./routes/concert')
 const connectDB = require('./db/connect')
@@ -10,10 +11,16 @@ const cors = require("cors");
 const port = 3000;
 
 // middleware
+// 設置 Express 服務靜態文件
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use("/api", ConcertRouter)
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
 const start = async () => {
     try {

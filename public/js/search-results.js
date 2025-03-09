@@ -85,3 +85,7 @@ document.querySelector('#search-icon').addEventListener('click', () => {
         window.location.href = `search.html?text=${encodeURIComponent(inputValue)}`;
     }
 })
+
+document.querySelector('.site-name').addEventListener('click', () => {
+    window.location.href = 'index.html'
+})

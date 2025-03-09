@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>搜尋結果 - 演唱會資訊整理</title>
-    <link rel="stylesheet" href="../public/css/index.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <div class="cover-container">
     <div class="search-wrapper">
+        <div class="site-name">
+            <h2>ConcertInfo.site</h2>
+        </div>
         <div class="search-container"><label for="city">城市</label> <select id="city">
             <option value="city_empty">未選擇</option>
             <option value="taipei">台北</option>
@@ -22,7 +25,7 @@
         </div>
         <div class="search-container"><input type="text" class="search-input" id="search-input"
                                              placeholder="請輸入關鍵字...">
-            <div class="search-icon-container"><img src="../public/images/search-icon1.png" alt="搜尋" id="search-icon">
+            <div class="search-icon-container"><img src="images/search-icon1.png" alt="搜尋" id="search-icon">
             </div>
         </div>
     </div>
@@ -41,6 +44,6 @@
         <button id="next-page" class="next-page-button">下一頁</button>
     </div>
 </div>
-<script src="../public/js/search-results.js"></script>
+<script src="js/search-results.js"></script>
 </body>
 </html>

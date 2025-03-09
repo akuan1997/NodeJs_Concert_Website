@@ -318,3 +318,64 @@ body {
 .search-icon-container:hover #search-icon {
     transform: scale(1.2); /* 略微放大 icon */
 }
+
+/*.site-name h2 {*/
+/*    font-size: 48px; !* 放大標題 *!*/
+/*    font-weight: bold;*/
+/*    !*color: #FF4C4C; !* 紅色霓虹字 *!*!*/
+/*    color: white;*/
+/*    text-shadow: 0 0 5px #FF4C4C, 0 0 10px #FF4C4C, 0 0 15px #FF0000, 0 0 20px #B02A2A; !* 霓虹燈光暈 *!*/
+/*    text-align: center; !* 置中 *!*/
+/*    letter-spacing: 2px; !* 增加字距 *!*/
+/*    padding: 20px;*/
+/*    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*!* 讓霓虹燈有閃爍感 *!*/
+/*@keyframes neon-flicker {*/
+/*    0% {*/
+/*        text-shadow: 0 0 5px #FF4C4C, 0 0 10px #FF4C4C, 0 0 15px #FF0000;*/
+/*    }*/
+/*    50% {*/
+/*        text-shadow: 0 0 6px #FF4C4C, 0 0 12px #FF4C4C, 0 0 18px #B02A2A;*/
+/*    }*/
+/*    100% {*/
+/*        text-shadow: 0 0 5px #FF4C4C, 0 0 10px #FF4C4C, 0 0 15px #FF0000;*/
+/*    }*/
+/*}*/
+
+/*.site-name h2:hover {*/
+/*    transform: scale(1.1); !* 滑鼠懸停時稍微放大 *!*/
+/*    animation: neon-flicker 1.5s infinite alternate; !* 啟動霓虹燈閃爍效果 *!*/
+/*}*/
+
+.site-name h2 {
+    font-size: 48px; /* 放大標題 */
+    font-weight: bold;
+    color: white; /* 主要字體顏色 */
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFC107, 0 0 20px #FFAA00; /* 金色霓虹燈光暈 */
+    text-align: center; /* 置中 */
+    letter-spacing: 2px; /* 增加字距 */
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* 讓霓虹燈有閃爍感 */
+@keyframes neon-flicker {
+    0% {
+        text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFC107;
+    }
+    50% {
+        text-shadow: 0 0 6px #FFD700, 0 0 12px #FFD700, 0 0 18px #FFAA00;
+    }
+    100% {
+        text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFC107;
+    }
+}
+
+.site-name h2:hover {
+    transform: scale(1.1); /* 滑鼠懸停時稍微放大 */
+    animation: neon-flicker 1.5s infinite alternate; /* 啟動霓虹燈閃爍效果 */
+}
