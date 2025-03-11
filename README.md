@@ -27,19 +27,19 @@ ConcertInfo.site is a comprehensive concert information platform designed for mu
 1. **Home Page (index.html)**
    - Showcases the latest concert information (limited to 6 entries)
    - Lists concerts with ticket sales starting within the next week
-
+     ![Website Preview](https://i.imgur.com/9ARRSi9.png)
 2. **More Information Page (more.html)**
    - Displays all concert information with pagination
    - Shows 21 entries per page
-
+     ![Website Preview](https://i.imgur.com/R3GYREe.png)
 3. **Search Results Page (search.html)**
    - Presents keyword search results
    - Allows paginated viewing of search results
-
+     ![Website Preview](https://i.imgur.com/1RPsT5i.png)
 4. **Query Page (query.html)**
    - Filters concerts based on city and date range
    - Displays search criteria at the top of the page
-
+     ![Website Preview](https://i.imgur.com/jjwmxUp.png)
 ## Feature Workflow
 
 ### City and Date Search
