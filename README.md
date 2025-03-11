@@ -1,6 +1,6 @@
 # ConcertInfo.site | Concert Information Platform
 
-![Website Preview](https://via.placeholder.com/800x450)
+![Website Preview](https://imgur.com/a/FbOIlMe)
 
 ## Project Overview
 
@@ -82,15 +82,7 @@ ConcertInfo.site is a comprehensive concert information platform designed for mu
 
 - Implement user accounts for saving favorite concerts
 - Add concert reminder functionality
-- Integrate with ticket purchasing platforms
 - Develop mobile application version
-
-## Contact
-
-For questions or collaboration opportunities related to this project, please contact me via:
-- Email: [your-email@example.com]
-- LinkedIn: [your-linkedin-profile]
-- Portfolio: [your-portfolio-website]
 
 ---
 
