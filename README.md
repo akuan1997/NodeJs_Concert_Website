@@ -1,6 +1,6 @@
 # ConcertInfo.site | Concert Information Platform
 
-![Website Preview](https://imgur.com/a/FbOIlMe)
+![Website Preview](https://imgur.com/kt0CgGx)
 
 ## Project Overview
 
