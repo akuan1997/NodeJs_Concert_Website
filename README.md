@@ -1,4 +1,4 @@
-# ConcertInfo.site | Concert Information Platform
+# ConcertInfo.site | Concert Information Webpage
 
 ![Website Preview](https://i.imgur.com/kt0CgGx.png)
 
