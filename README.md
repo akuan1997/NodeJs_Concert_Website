@@ -86,4 +86,4 @@ ConcertInfo.site is a comprehensive concert information platform designed for mu
 
 ---
 
-© 2025 ConcertInfo.site | Made with ♫ in Taiwan
+© 2025 ConcertInfo.site | Made with ♫ in Taiwan.
