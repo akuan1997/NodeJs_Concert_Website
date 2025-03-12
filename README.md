@@ -22,6 +22,13 @@ ConcertInfo.site is a comprehensive concert information platform designed for mu
 - **Modular Development:** JavaScript code separated into multiple files based on functionality
 - **RESTful API Integration:** Communicates with backend API to fetch concert data
 
+### Backend & Deployment
+
+- **Linux Development Environment:** The backend is developed and tested in a Linux-based environment for stability and performance.
+- **AWS Deployment:** The application is hosted on AWS, leveraging cloud computing resources for scalability.
+- **Docker Containerization:** The backend services are containerized using Docker, ensuring consistency across different environments and simplifying deployment.
+
+
 ### Main Pages
 
 1. **Home Page (index.html)**
